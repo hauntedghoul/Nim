@@ -1,9 +1,12 @@
 import React from 'react'
+import Nav from './Navbar/Nav'
 
 const easy = () => {
-  return (
-    <div>easy</div>
-  )
+    return (
+        <div>
+            <Nav />
+        </div>
+    )
 }
 
 export default easy

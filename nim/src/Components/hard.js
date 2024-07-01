@@ -1,9 +1,11 @@
 import React from 'react'
+import Nav from './Navbar/Nav'
 
 const hard = () => {
-  return (
-    <div>hard</div>
-  )
+    return (<div>
+        <Nav />
+    </div>
+    )
 }
 
 export default hard
