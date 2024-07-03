@@ -12,9 +12,6 @@ const Winner = () => {
         <Link to="/setup">
           <div className="button">Play Again</div>
         </Link>
-        <Link to="/">
-          <div className="button">Exit</div>
-        </Link>
       </div>
     </div>
   );
