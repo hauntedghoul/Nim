@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import Nav from './Navbar/Nav'
 
-const easy = () => {
+const Easy = () => {
 
     const [isFirstPlayer, setIsFirstPlayer] = useState(true);
 
@@ -22,4 +22,4 @@ const easy = () => {
     );
   }
 
-export default easy
+export default Easy

@@ -8,13 +8,13 @@ const Nav = () => {
             <li>
                 <Link to="/">Home</Link>
             </li>
-            <li>
+            {/* <li>
                 <Link to="/setup">Setup</Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
                 <Link to="/winner">Winner</Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
                 <Link to="/easy">Easy</Link>
             </li>
             <li>
@@ -22,7 +22,7 @@ const Nav = () => {
             </li>
             <li>
                 <Link to="/hard">Hard</Link>
-            </li>
+            </li> */}
 
         </ul>
     </nav>
