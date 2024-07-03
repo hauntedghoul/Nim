@@ -10,7 +10,7 @@ const Winner = () => {
       </div>
       <div className="button-container">
         <Link to="/setup">
-          <div className="button">Play Again</div>
+          <img className='play-again' src='/images/PlayAgain.png' alt='Play Again' />
         </Link>
       </div>
     </div>

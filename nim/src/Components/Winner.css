@@ -29,18 +29,9 @@ body {
     gap: 20px;
   }
   
-  .button {
-    background-color: #f44336;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #e57373;
+  .play-again {
+    width: 100px;  /* Adjust the width as needed */
+    height: auto;  /* Keeps the aspect ratio */
   }
   
   a {
