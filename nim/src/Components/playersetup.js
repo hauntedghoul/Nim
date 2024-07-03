@@ -1,18 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Navbar/Nav'
+import './playersetup.css'
 
 const playersetup = () => {
     return (
         <div>
+            <h1><img className='setup' src='/images/SetupWrapper.png'/></h1>
+                <input className='playerOne' type="text" placeholder="Player 1"></input>
+               <input className='playerTwo' type="text" placeholder="Player 2"></input> 
+            
             <Nav />
-            <h1>Set up the Game</h1>
-            <input type="text" placeholder="Player 1"></input>
-            <input type="text" placeholder="Player 2"></input>
 
-            <Link to="/easy"><button src="/easy">Easy</button></Link>
-            <Link to="/medium"><button src="/medium">Medium</button></Link>
-                <Link to="/hard"><button src="/hard">Hard</button></Link>
+            <Link to="/easy"><img className='setup-image' src='/images/Easy.png' /></Link>
+            <Link to="/medium"><img className='setup-image' src='/images/Medium.png' /></Link>
+            <Link to="/hard"><img className='setup-image' src='/images/Hard.png' /></Link>
             
         </div>
     )

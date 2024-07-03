@@ -1,0 +1,22 @@
+.setup{
+    height: 250px;
+}
+
+.playerOne {
+    /* background-image: url('/images/Knife.png'); */
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat;
+    padding: 10px; /* Adjust padding to ensure text doesn't overlap the image */
+    border: 1px solid #ccc; /* Optional: add border for better visibility */
+    width: 300px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in total width/height */
+    font-size: 16px;
+}
+
+
+/* .playerTwo{
+    background-image: url('/images/Knife.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
