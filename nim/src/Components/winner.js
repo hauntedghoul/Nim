@@ -1,9 +1,30 @@
 import React from 'react'
+import './Winner.css'
 
-const winner = () => {
+const Winner = () => {
+  const handlePlayAgain = () => {
+    console.log('Play again clicked.');
+  };
+
+  const handleExit = () => {
+    console.log('exit clicked.');
+  };
+
   return (
-    <div>winner</div>
+    <div className='winner-container'>
+      <div className='winner-banner'>
+        <p>Player 1 Won</p>
+      </div>
+      <div className='button-container'>
+        <div className='button' onClick={handlePlayAgain}>
+          Play Again
+        </div>
+        <div className='button' onClick={handleExit}>
+          Exit
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default winner
+export default Winner
