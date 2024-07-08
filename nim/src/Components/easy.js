@@ -1,57 +1,61 @@
-import React from 'react'
-import { useState } from 'react';
+// src/Components/easy.js
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './easy.css';
+import Nav from './Navbar/Nav';
 
-import Nav from './Navbar/Nav'
-import './easy.css'
+const Easy = ({ onExit }) => {
+  const [heaps, setHeaps] = useState([1, 2, 3]); // initial heap sizes
+  const [isFirstPlayer, setIsFirstPlayer] = useState(true);
+  const [currentPlayer, setCurrentPlayer] = useState('Player 1');
+  const navigate = useNavigate();
 
-const Easy = () => {
+  const nextPlayer = () => {
+    setIsFirstPlayer(!isFirstPlayer);
+    setCurrentPlayer(isFirstPlayer ? 'Player 2' : 'Player 1');
+  };
 
-    const [isFirstPlayer, setIsFirstPlayer] = useState(true);
+  const checkWinner = (newHeaps) => {
+    if (newHeaps.every(heap => heap === 0)) {
+      navigate('/winner', { state: { winner: isFirstPlayer ? 'Player 2' : 'Player 1' } });
+    }
+  };
 
-    const nextPlayer = () => {
-        setIsFirstPlayer(!isFirstPlayer);
-    };
+  const removeObjects = (heapIndex, count) => {
+    const newHeaps = [...heaps];
+    newHeaps[heapIndex] -= count;
+    setHeaps(newHeaps);
+    checkWinner(newHeaps);
+    nextPlayer();
+  };
 
-    return (
-        <div>
-            <div>
-                <Nav />
-            </div>
-            <div>
-                <div className='grid-container'>
-                    <div className='grid-item'><img src="/images/Roomba.png" /><div>
-                    </div>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <div className='grid-container2'>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                        </div>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <div className='grid-container3'>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                            <div className='grid-item'><img src="/images/Roomba.png" /></div>
-                        </div>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <h1>Current Player: {isFirstPlayer ? 'Player 1' : 'Player 2'}</h1>
-                        <button onClick={nextPlayer}>Next Player</button>
-                    </div>
-                </div>
+  const renderHeap = (heap, index) => (
+    <div className="heap" key={index}>
+      {/* <h2>Heap {index + 1}: {heap}</h2> */}
+      {Array.from({ length: heap }, (_, i) => (
+        <img key={i} className='roomba' src="/images/Roomba.png" alt="roomba"/>
+      ))}
+      <div>
+        {Array.from({ length: heap }, (_, i) => (
+          <button key={i} onClick={() => removeObjects(index, i + 1)}>{i + 1}</button>
+        ))}
+      </div>
+    </div>
+  );
 
-            </div>
+  return (
+    <div>
+      <Nav />
+      <div className="easy">
+        <h1>Easy Level</h1>
+        <div className="game-board">
+          {heaps.map((heap, index) => renderHeap(heap, index))}
         </div>
-    );
-}
+        <h1>Current Player: {currentPlayer}</h1>
+        <button className="exit-button" onClick={onExit}>Exit</button>
+      </div>
+    </div>
+  );
+};
 
-export default Easy
+export default Easy;
