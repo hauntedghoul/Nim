@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ccc;
     margin: 5px;
 }
 
@@ -36,6 +35,7 @@
     grid-column-start: 2;
 }
 
-.roomba{
-    height: 200px;
+.Roomba{
+    height: 100px;
+    width: 100px;
 }
