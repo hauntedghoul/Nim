@@ -9,7 +9,7 @@ import Setup from './Components/playersetup';
 import Easy from './Components/easy';
 import Medium from './Components/medium';
 import Hard from './Components/hard';
-import Winner from './Components/winner';
+import Winner from './Components/Winner';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

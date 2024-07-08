@@ -1,4 +1,3 @@
-// src/Components/Winner.js
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Winner.css';
@@ -10,9 +9,18 @@ const Winner = () => {
 
   return (
     <div className="winner">
-      <h1>Congratulations!</h1>
-      <h2>{winner} wins the game!</h2>
-      <button onClick={() => navigate('/')}>Play Again</button>
+      <div className="winner-banner">
+        <img src='/images/Winner.png' className='banner'/>
+        <p>{winner} wins the game!</p>
+      </div>
+      <div className="button-container">
+        <img
+          className="play-again"
+          src="/images/PlayAgain.png"
+          alt="Play Again"
+          onClick={() => navigate('/setup')}
+        />
+      </div>
     </div>
   );
 };

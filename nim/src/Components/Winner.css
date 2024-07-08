@@ -1,41 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .winner-container {
-    text-align: center;
-  }
-  
-  .winner-banner {
-    background-color: #d32f2f;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .play-again {
-    width: 100px;  /* Adjust the width as needed */
-    height: auto;  /* Keeps the aspect ratio */
-  }
-  
-  a {
-    text-decoration: none;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  
+.winner {
+  text-align: center;
+}
+
+.winner-banner {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 50px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+.banner {
+  width: 400px;
+}
+
+.winner-banner p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.play-again {
+  width: 100px;  
+  height: auto;  
+  cursor: pointer; 
+}
+
+a {
+  text-decoration: none;
+}
