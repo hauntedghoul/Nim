@@ -44,14 +44,13 @@ const Medium = ({ onExit }) => {
 
     return (
         <div>
-            <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
             <div className="medium">
                 <h1>Medium Level</h1>
                 <div className="game-board">
                     {heaps.map((heap, index) => renderHeap(heap, index))}
                 </div>
                 <h1>Current Player: {currentPlayer}</h1>
-                <button className="exit-button" onClick={onExit}>Exit</button>
+                <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
             </div>
         </div>
     )
