@@ -1,18 +1,18 @@
+// src/Components/Winner.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Winner.css';
 
 const Winner = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { winner } = location.state || { winner: 'Unknown' };
+
   return (
-    <div className="winner-container">
-      <div className="winner-banner">
-        <p>Player 1 Won</p>
-      </div>
-      <div className="button-container">
-        <Link to="/setup">
-          <img className='play-again' src='/images/PlayAgain.png' alt='Play Again' />
-        </Link>
-      </div>
+    <div className="winner">
+      <h1>Congratulations!</h1>
+      <h2>{winner} wins the game!</h2>
+      <button onClick={() => navigate('/')}>Play Again</button>
     </div>
   );
 };
