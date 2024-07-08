@@ -42,7 +42,11 @@
     grid-column-start: 2;
 }
 
-.Roomba{
+.roomba{
     height: 100px;
     width: 100px;
+}
+
+.home-image-gamemode{
+    margin:-70px;
 }

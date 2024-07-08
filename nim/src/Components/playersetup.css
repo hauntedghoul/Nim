@@ -2,6 +2,11 @@
     height: 250px;
 }
 
+.home-image{
+    margin-left: 5px;
+    height: 300px;
+}
+
 .playerOne {
     /* background-image: url('/images/Knife.png'); */
     background-size: cover; /* Adjust as needed */
