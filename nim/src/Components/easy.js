@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './easy.css';
-import Nav from './Navbar/Nav';
+import { Link } from 'react-router-dom'
 
 const Easy = ({ onExit }) => {
   const [heaps, setHeaps] = useState([1, 2, 3]); // initial heap sizes
@@ -45,14 +45,13 @@ const Easy = ({ onExit }) => {
 
   return (
     <div>
-      <Nav />
       <div className="easy">
         <h1>Easy Level</h1>
         <div className="game-board">
           {heaps.map((heap, index) => renderHeap(heap, index))}
         </div>
         <h1>Current Player: {currentPlayer}</h1>
-        <button className="exit-button" onClick={onExit}>Exit</button>
+        <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
       </div>
     </div>
   );

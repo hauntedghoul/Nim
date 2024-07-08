@@ -1,70 +1,58 @@
-import React from 'react'
-import Nav from './Navbar/Nav'
-import { useState } from 'react';
-import './medium.css'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './medium.css';
+import { Link } from 'react-router-dom'
 
-const Medium = () => {
-
+const Medium = ({ onExit }) => {
+    const [heaps, setHeaps] = useState([1, 3, 5, 7]); // initial heap sizes
     const [isFirstPlayer, setIsFirstPlayer] = useState(true);
+    const [currentPlayer, setCurrentPlayer] = useState('Player 1');
+    const navigate = useNavigate();
 
     const nextPlayer = () => {
         setIsFirstPlayer(!isFirstPlayer);
+        setCurrentPlayer(isFirstPlayer ? 'Player 2' : 'Player 1');
     };
 
+    const checkWinner = (newHeaps) => {
+        if (newHeaps.every(heap => heap === 0)) {
+            navigate('/winner', { state: { winner: isFirstPlayer ? 'Player 2' : 'Player 1' } });
+        }
+    };
 
+    const removeObjects = (heapIndex, count) => {
+        const newHeaps = [...heaps];
+        newHeaps[heapIndex] -= count;
+        setHeaps(newHeaps);
+        checkWinner(newHeaps);
+        nextPlayer();
+    };
+
+    const renderHeap = (heap, index) => (
+        <div className="heap" key={index}>
+            {/* <h2>Heap {index + 1}: {heap}</h2> */}
+            {Array.from({ length: heap }, (_, i) => (
+                <img key={i} className='roomba' src="/images/Roomba.png" alt="roomba" />
+            ))}
+            <div>
+                {Array.from({ length: heap }, (_, i) => (
+                    <button key={i} onClick={() => removeObjects(index, i + 1)}>{i + 1}</button>
+                ))}
+            </div>
+        </div>
+    )
 
     return (
         <div>
-            <div>
-                <Nav />
-            </div>
-            <div>
-                <div className='grid-container'>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
+            <div className="medium">
+                <h1>Medium Level</h1>
+                <div className="game-board">
+                    {heaps.map((heap, index) => renderHeap(heap, index))}
                 </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div className='grid-container2'>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div className='grid-container3'>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div className='grid-container4'>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                <div className='grid-item'><img src="/images/Roomba.png" class="Roomba" alt="Roomba" /></div>
-                </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <h1>Current Player: {isFirstPlayer ? 'Player 1' : 'Player 2'}</h1>
-                <button onClick={nextPlayer}>Next Player</button>
-
+                <h1>Current Player: {currentPlayer}</h1>
+                <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
             </div>
         </div>
-        
-        
     )
 }
 
