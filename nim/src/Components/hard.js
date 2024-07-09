@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './hard.css';import { Link } from 'react-router-dom'
+import './hard.css'; import { Link } from 'react-router-dom'
 import Nav from './Navbar/Nav';
 
 const Hard = ({ onExit }) => {
@@ -48,6 +48,10 @@ const Hard = ({ onExit }) => {
                 <h2>Hard Level</h2>
                 <div className="game-board">
                     {heaps.map((heap, index) => renderHeap(heap, index))}
+                </div>
+                <div className='info'>
+                    The buttons on the bottom determines how many roomba's you take from each row.
+                    For example if you press the button with the number 3 you will end up taking 3 Roomba's
                 </div>
                 <h1>Current Player: {currentPlayer}</h1>
                 <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
