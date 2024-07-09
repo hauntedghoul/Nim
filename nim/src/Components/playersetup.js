@@ -1,44 +1,40 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Nav from './Navbar/Nav';
-import './playersetup.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './playersetup.css'
 
-const PlayerSetup = () => {
-    const [playerOne, setPlayerOne] = useState('');
-    const [playerTwo, setPlayerTwo] = useState('');
+const playersetup = () => {
+
+    const knifeStyle = {
+        backgroundImage: `url(${process.env.PUBLIC_URL}/images/Knife.png)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: 'white', 
+        padding: '20px', 
+        height: '300px',
+        width: '500px',
+      };
 
     return (
         <div>
-            <img className='setup' src='/images/SetupWrapper.png' alt='Setup Wrapper' />
-            <br />
-            <Link to="/"><img className='home-image' src='/images/Home.png' alt='Home' /></Link>
-            <br />
-            <input 
-                className='playerOne' 
-                type="text" 
-                placeholder="Player 1" 
-                value={playerOne}
-                onChange={(e) => setPlayerOne(e.target.value)}
-            />
-            <input 
-                className='playerTwo' 
-                type="text" 
-                placeholder="Player 2" 
-                value={playerTwo}
-                onChange={(e) => setPlayerTwo(e.target.value)}
-            />
-            <br />
-            <Link to={{ pathname: "/easy", state: { playerOne, playerTwo } }}>
-                <img className='setup-image' src='/images/Easy.png' alt='Easy' />
-            </Link>
-            <Link to={{ pathname: "/medium", state: { playerOne, playerTwo } }}>
-                <img className='setup-image' src='/images/Medium.png' alt='Medium' />
-            </Link>
-            <Link to={{ pathname: "/hard", state: { playerOne, playerTwo } }}>
-                <img className='setup-image' src='/images/Hard.png' alt='Hard' />
-            </Link>
+            <img className='setup' src='/images/SetupWrapper.png' />
+            <br/>
+            <Link to="/"><img className='home-image' src='/images/Home.png' /></Link>
+            <br/>
+            <div className="playerSetup">
+                <div style={knifeStyle}>
+                    <input className='playerOne' type="text" placeholder="Player 1"></input>
+                </div>
+                <div style={knifeStyle}>
+                    <input className='playerTwo' type="text" placeholder="Player 2"></input>
+                </div>
+            </div>
+            <br/>
+            <Link to="/easy"><img className='setup-image' src='/images/Easy.png' /></Link>
+            <Link to="/medium"><img className='setup-image' src='/images/Medium.png' /></Link>
+            <Link to="/hard"><img className='setup-image' src='/images/Hard.png' /></Link>
+
         </div>
     );
 }
 
-export default PlayerSetup;
+export default playersetup;
