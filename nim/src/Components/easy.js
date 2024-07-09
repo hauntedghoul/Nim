@@ -1,23 +1,27 @@
-// src/Components/easy.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './easy.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Easy = ({ onExit }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { playerOne, playerTwo } = location.state || { playerOne: 'Player 1', playerTwo: 'Player 2' }; // Default values if state is undefined
   const [heaps, setHeaps] = useState([1, 2, 3]); // initial heap sizes
   const [isFirstPlayer, setIsFirstPlayer] = useState(true);
-  const [currentPlayer, setCurrentPlayer] = useState('Player 1');
-  const navigate = useNavigate();
+  const [currentPlayer, setCurrentPlayer] = useState(playerOne);
+
+  useEffect(() => {
+    setCurrentPlayer(isFirstPlayer ? playerOne : playerTwo);
+  }, [isFirstPlayer, playerOne, playerTwo]);
 
   const nextPlayer = () => {
     setIsFirstPlayer(!isFirstPlayer);
-    setCurrentPlayer(isFirstPlayer ? 'Player 2' : 'Player 1');
   };
 
   const checkWinner = (newHeaps) => {
     if (newHeaps.every(heap => heap === 0)) {
-      navigate('/winner', { state: { winner: isFirstPlayer ? 'Player 2' : 'Player 1' } });
+      navigate('/winner', { state: { winner: isFirstPlayer ? playerTwo : playerOne } });
     }
   };
 
@@ -31,7 +35,6 @@ const Easy = ({ onExit }) => {
 
   const renderHeap = (heap, index) => (
     <div className="heap" key={index}>
-      {/* <h2>Heap {index + 1}: {heap}</h2> */}
       {Array.from({ length: heap }, (_, i) => (
         <img key={i} className='roomba' src="/images/Roomba.png" alt="roomba"/>
       ))}
