@@ -8,10 +8,22 @@ const Winner = () => {
   const navigate = useNavigate();
   const { winner } = location.state || { winner: 'Unknown' };
 
+  const backgroundStyle = {
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/Winner.png)`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: 'white', 
+    padding: '20px', 
+    height: '200px',
+    width: '400px',
+  };
+
   return (
     <div className="winner">
-      <h1>Congratulations!</h1>
-      <h2>{winner} wins the game!</h2>
+      <div style={backgroundStyle}>
+        <h1 className="Congrats">Congratulations!</h1>
+        <h2>{winner} wins the game!</h2>
+      </div>
       <button onClick={() => navigate('/')}>Play Again</button>
     </div>
   );
