@@ -5,7 +5,7 @@
 .home-image{
     margin-left: 5px;
     margin-bottom: 10px;
-    height: 250px;
+    height: 220px;
 }
 
 .playerSetup{
@@ -35,3 +35,8 @@
     box-sizing: border-box; /* Ensure padding and border are included in total width/height */
     font-size: 16px;
     } 
+
+    .confirm{
+        background-color: transparent;
+        border: none;
+    }

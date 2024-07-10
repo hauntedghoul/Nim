@@ -23,7 +23,7 @@ const Winner = () => {
         <h1 className="Congrats">Congratulations!</h1>
         <h2>{winner} wins the game!</h2>
       </div>
-      <button onClick={() => navigate('/')}>Play Again</button>
+      <button className='confirm' onClick={() => navigate('/')}><img className='setup' src='/images/PlayAgain.png' alt='Setup Wrapper' /></button>
     </div>
   );
 };
