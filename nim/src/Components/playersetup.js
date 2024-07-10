@@ -53,7 +53,10 @@ const PlayerSetup = () => {
             </div>
             <br />
             {!namesConfirmed ? (
-                <button onClick={handleConfirmNames}>Confirm Names</button>
+                <button className='confirm' onClick={handleConfirmNames}>
+            <img className='home-image' src='/images/Confirm.png' alt='Setup Wrapper' />
+                    
+                </button>
             ) : (
                 <div>
                     <Link to="/easy" state={{ playerOne, playerTwo }}>
