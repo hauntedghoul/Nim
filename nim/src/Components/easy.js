@@ -11,6 +11,17 @@ const Easy = ({ onExit }) => {
   const [isFirstPlayer, setIsFirstPlayer] = useState(true);
   const [currentPlayer, setCurrentPlayer] = useState(playerOne);
 
+  const knifeStyle = {
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/Knife.png)`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: 'white', 
+    padding: '20px', 
+    height: '300px',
+    width: '500px',
+    margin: '-40px'
+};
+
   useEffect(() => {
     setCurrentPlayer(isFirstPlayer ? playerOne : playerTwo);
   }, [isFirstPlayer, playerOne, playerTwo]);
@@ -57,7 +68,9 @@ const Easy = ({ onExit }) => {
           The buttons on the bottom determines how many roomba's you take from each row. 
           For example if you press the button with the number 3 you will end up taking 3 Roomba's
         </div>
-        <h1>Current Player: {currentPlayer}</h1>
+        <div style={knifeStyle}>
+          <h1 className="player">Current Player: {currentPlayer}</h1>
+        </div>
         <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
       </div>
     </div>

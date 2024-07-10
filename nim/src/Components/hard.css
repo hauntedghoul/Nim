@@ -1,6 +1,9 @@
+body{
+    height: 50vh;
+}
+
 .grid-container {
     grid-template-columns: 1fr;
-    
 }
 
 .grid-container2 {
@@ -23,13 +26,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
 }
 
 .grid-container, .grid-container2, .grid-container3, .grid-container4, .grid-container5 {
     margin-left: 55px;
     margin-right: 55px;
-    padding: 5px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -49,17 +50,29 @@
 }
 
 .home-image-gamemode{
+    margin-top: -900px;
     height:140px;
-    margin-top: -44px;
-}
+}    
 
 .info {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #333;
     background-color: #f9f9f9;
-    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 10px 0;
+}
+
+.CurrentPlayer{
+    padding-top: 80px;
+    margin-left: 170px;
+    font-size: 26px;
+}
+
+.knife{
+    margin-top: -50px;
+}
+
+.Hard{
+    overflow-y:hidden;
 }
