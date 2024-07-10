@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Winner.css';
 
+
 const Winner = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -19,11 +20,16 @@ const Winner = () => {
 
   return (
     <div className="winner">
-      <div style={backgroundStyle}>
+      <div style={backgroundStyle} className="winnerbg">
         <h1 className="Congrats">Congratulations!</h1>
         <h2>{winner} wins the game!</h2>
       </div>
-      <button className='confirm' onClick={() => navigate('/')}><img className='setup' src='/images/PlayAgain.png' alt='Setup Wrapper' /></button>
+      <br></br>
+      <div className="professors">
+        <div className="kohler"></div>
+        <button className='confirm' onClick={() => navigate('/')}><img className='setup' src='/images/PlayAgain.png' alt='Setup Wrapper' /></button>
+        <div className="sarah"></div>
+      </div>
     </div>
   );
 };

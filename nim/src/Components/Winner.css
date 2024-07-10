@@ -8,6 +8,32 @@ body {
   margin: 0;
 }
 
-  .Congrats{
-    margin-top: 50px;
-  }
+.Congrats {
+  margin-top: 50px;
+}
+
+.winnerbg{
+  margin-left: 300px;
+}
+
+.professors {
+  display: flex;
+  flex-direction: row;
+}
+
+.kohler, .sarah {
+  margin-top: 200px;
+  justify-self: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25vw;
+  height: 26vw;
+}
+
+.kohler {
+  background-image: url('../../public/images/kohler.png');
+}
+
+.sarah {
+  background-image: url('../../public/images/sarah.png');
+}
