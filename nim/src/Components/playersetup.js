@@ -58,16 +58,22 @@ const PlayerSetup = () => {
                     
                 </button>
             ) : (
-                <div>
-                    <Link to="/easy" state={{ playerOne, playerTwo }}>
-                        <img className='setup-image' src='/images/Easy.png' alt='Easy' />
-                    </Link>
-                    <Link to="/medium" state={{ playerOne, playerTwo }}>
-                        <img className='setup-image' src='/images/Medium.png' alt='Medium' />
-                    </Link>
-                    <Link to="/hard" state={{ playerOne, playerTwo }}>
-                        <img className='setup-image' src='/images/Hard.png' alt='Hard' />
-                    </Link>
+                <div className='gamemode'>
+                    <div className="Paul">
+                        <Link to="/easy" state={{ playerOne, playerTwo }}>
+                            <img className='setup-image' src='/images/Easy.png' alt='Easy' />
+                        </Link>
+                    </div>
+                    <div className="Comire">
+                        <Link to="/medium" state={{ playerOne, playerTwo }}>
+                            <img className='setup-image' src='/images/Medium.png' alt='Medium' />
+                        </Link>
+                    </div>
+                    <div className="Shull">
+                        <Link to="/hard" state={{ playerOne, playerTwo }}>
+                            <img className='setup-image' src='/images/Hard.png' alt='Hard' />
+                        </Link>
+                    </div>    
                 </div>
             )}
         </div>
