@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import './easy.css';
-import { Link } from 'react-router-dom';
 
 const Easy = ({ onExit }) => {
   const location = useLocation();
@@ -15,12 +14,13 @@ const Easy = ({ onExit }) => {
     backgroundImage: `url(${process.env.PUBLIC_URL}/images/Knife.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    color: 'white', 
-    padding: '20px', 
+    color: 'white',
+    padding: '20px',
     height: '300px',
     width: '500px',
-    margin: '-40px'
-};
+    margin: '0 10px',
+    position: 'relative',
+  };
 
   useEffect(() => {
     setCurrentPlayer(isFirstPlayer ? playerOne : playerTwo);
@@ -68,10 +68,17 @@ const Easy = ({ onExit }) => {
           The buttons on the bottom determines how many roomba's you take from each row. 
           For example if you press the button with the number 3 you will end up taking 3 Roomba's
         </div>
-        <div style={knifeStyle}>
-          <h1 className="player">Current Player: {currentPlayer}</h1>
+        <div className="player-info">
+          <div className="bret-knife-container">
+            <div style={knifeStyle}>
+              <h1 className="player">Current Player: {currentPlayer}</h1>
+            </div>
+            <div className="bret-style">
+              <img src='/images/bret.png' alt="Bret" />
+            </div>
+          </div>
         </div>
-        <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' /></Link>
+        <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' alt="Home" /></Link>
       </div>
     </div>
   );
