@@ -1,9 +1,6 @@
-
-
-
 .grid-container {
     grid-template-columns: 1fr;
-    
+
 }
 
 .grid-container2 {
@@ -25,7 +22,10 @@
     margin: 5px;
 }
 
-.grid-container, .grid-container2, .grid-container3, .grid-container4 {
+.grid-container,
+.grid-container2,
+.grid-container3,
+.grid-container4 {
     margin-left: 55px;
     margin-right: 55px;
     padding: 10px;
@@ -42,13 +42,13 @@
     grid-column-start: 2;
 }
 
-.roomba{
+.roomba {
     height: 100px;
     width: 100px;
 }
 
-.home-image-gamemode{
-    height:140px;
+.home-image-gamemode {
+    height: 140px;
 }
 
 .info {
@@ -62,17 +62,45 @@
     margin: 10px 0;
 }
 
-.knife{
+.knife {
     margin-top: -40px;
     margin-bottom: -100px;
 }
 
-.Current{
+.Current {
     margin-top: 50px;
     margin-left: 190px;
     font-size: 30px;
 }
 
-h1{
+h1 {
     margin-top: -30px;
+}
+
+.button-4 {
+    background-color: #F98549;
+    color: white;
+    margin: 10px;
+
+}
+
+.button-5 {
+    background-color: #91BF6D;
+    color: white;
+    margin: 10px;
+
+}
+
+.button-6 {
+    background-color: #4B8F8E;
+    color: white;
+    margin: 10px;
+
+}
+
+.button-7 {
+    background-color: #217B9F;
+    color: white;
+    margin: 10px;
+
 }

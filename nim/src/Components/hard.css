@@ -76,3 +76,16 @@ body{
 .Hard{
     overflow-y:hidden;
 }
+
+.button-8 {
+    background-color: teal;
+    color: white;
+    margin: 10px;
+}
+
+.button-9 {
+    background-color: brown;
+    color: white;
+    margin: 10px;
+
+}

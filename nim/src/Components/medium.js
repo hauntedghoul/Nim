@@ -50,7 +50,7 @@ const Medium = ({ onExit }) => {
             ))}
             <div>
                 {Array.from({ length: heap }, (_, i) => (
-                    <button key={i} onClick={() => removeObjects(index, i + 1)}>{i + 1}</button>
+                    <button key={i} className={`button-${i + 1}`} onClick={() => removeObjects(index, i + 1)}>{i + 1}</button>
                 ))}
             </div>
         </div>
