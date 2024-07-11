@@ -100,14 +100,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -10px;
-}
+  }
+  
+  .bret-style img {
+    height: 300px; /* Adjust the height as needed */
+    margin: 0 10px;
+  }
 
-.bret-style img {
-    height: 200px; 
-    margin-bottom: 100px;
-}
-
-.Hardlvl{
-    margin-top: 90px;
-}
+  .player {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 65%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 90%; /* Ensure it fits within the knife blade */
+    text-align: center;
+    overflow: hidden;
+  }
