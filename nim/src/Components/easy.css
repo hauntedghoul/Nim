@@ -17,7 +17,6 @@
   
   .bret-style img {
     height: 300px; /* Adjust the height as needed */
-    margin: 0 10px;
   }
   
   .home-image-gamemode {
@@ -35,12 +34,11 @@
     margin: 10px 0;
   }
   
-  .player {
-    font-size: 20px;
+  .Currentplayer {
+    font-size: 30px;
     font-weight: bold;
     position: absolute;
-    top: 40%;
-    left: 65%;
+    margin-left: 350px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
     color: white;
@@ -111,3 +109,6 @@
     margin: 10px;
   }
   
+.easylvl{
+  margin-top: -5px;
+}

@@ -67,17 +67,17 @@ const Medium = ({ onExit }) => {
                     The buttons on the bottom determines how many roomba's you take from each row.
                     For example if you press the button with the number 3 you will end up taking 3 Roomba's
                 </div>
-                <div className='player-info'>
-                    <div className='bret-knife-container'>
+                <div className="player-info">
+                    <div className="bret-knife-container">
                         <div style={knifeStyle}>
-                            <h1 className="Current">Current Player: {currentPlayer}</h1>
-                            </div>
-                            <div className='bret-style'>
-                                <img src='/images/bret.png' alt='Bret' />
-                            </div>
+                            <h1 className="player">Current Player: {currentPlayer}</h1>
+                        </div>
+                        <div className="bret-style">
+                            <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' alt="Home" /></Link>
+                            <img src='/images/bret.png' alt="Bret" />
+                        </div>
                     </div>
                 </div>
-                <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' alt='Home' /></Link>
             </div>
         </div>
     );

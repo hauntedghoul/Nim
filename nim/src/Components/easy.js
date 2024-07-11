@@ -47,7 +47,7 @@ const Easy = ({ onExit }) => {
   const renderHeap = (heap, index) => (
     <div className="heap" key={index}>
       {Array.from({ length: heap }, (_, i) => (
-        <img key={i} className='roomba' src="/images/Roomba.png" alt="roomba"/>
+        <img key={i} className='roomba' src="/images/Roomba.png" alt="roomba" />
       ))}
       <div>
         {Array.from({ length: heap }, (_, i) => (
@@ -60,25 +60,25 @@ const Easy = ({ onExit }) => {
   return (
     <div>
       <div className="easy">
-        <h1>Easy Level</h1>
+        <h1 class="easylvl">Easy Level</h1>
         <div className="game-board">
           {heaps.map((heap, index) => renderHeap(heap, index))}
         </div>
         <div className='info'>
-          The buttons on the bottom determines how many roomba's you take from each row. 
+          The buttons on the bottom determines how many roomba's you take from each row.
           For example if you press the button with the number 3 you will end up taking 3 Roomba's
         </div>
         <div className="player-info">
           <div className="bret-knife-container">
             <div style={knifeStyle}>
-              <h1 className="player">Current Player: {currentPlayer}</h1>
+              <h1 className="Currentplayer">Current Player: {currentPlayer}</h1>
             </div>
             <div className="bret-style">
+              <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' alt="Home" /></Link>
               <img src='/images/bret.png' alt="Bret" />
             </div>
           </div>
         </div>
-        <Link to="/"><img className='home-image-gamemode' src='/images/Home.png' alt="Home" /></Link>
       </div>
     </div>
   );

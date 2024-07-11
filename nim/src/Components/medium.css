@@ -1,6 +1,5 @@
 .grid-container {
     grid-template-columns: 1fr;
-
 }
 
 .grid-container2 {
@@ -59,7 +58,6 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 10px 0;
 }
 
 .Current {
@@ -69,7 +67,7 @@
 }
 
 h1 {
-    margin-top: -30px;
+    margin-top: 90px;
 }
 
 .button-4 {
@@ -104,24 +102,26 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .bret-style img {
-    height: 300px; /* Adjust the height as needed */
-    margin: 0 10px;
-  }
-  .player-info {
+}
+
+.bret-style img {
+    height: 200px; 
+}
+
+
+.player-info {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0;
-  }
-  .player {
-    font-size: 20px;
+}
+
+.player {
+    font-size: 25px;
     font-weight: bold;
     position: absolute;
-    top: 40%;
-    left: 65%;
+    margin-left: 330px;
+    margin-top: 70px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
     color: white;
@@ -129,4 +129,4 @@ h1 {
     width: 90%; /* Ensure it fits within the knife blade */
     text-align: center;
     overflow: hidden;
-  }
+}
