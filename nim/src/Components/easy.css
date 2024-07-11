@@ -36,12 +36,11 @@
     margin: 10px 0;
   }
   
-  .player {
-    font-size: 20px;
+  .Currentplayer {
+    font-size: 25px;
     font-weight: bold;
     position: absolute;
-    top: 40%;
-    left: 65%;
+    margin-left: 330px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
     color: white;
@@ -50,8 +49,6 @@
     text-align: center;
     overflow: hidden;
     position: absolute; 
-    /* top: 35%;  */
-    /* left: 45%;  */
     transform: translate(-50%, -50%); 
 }
 
@@ -114,5 +111,4 @@
     background-color: #F07128;
     color: white;
     margin: 10px;
-  }
-  
+}
